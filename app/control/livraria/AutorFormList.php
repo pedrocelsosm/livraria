@@ -1,4 +1,7 @@
 <?php
+
+use Adianti\Widget\Form\THidden;
+
 /**
  * AutorFormList Form List
  * @author  <your name here>
@@ -24,15 +27,15 @@ class AutorFormList extends TPage
         
 
         // create the form fields
-        $id = new TEntry('id');
+        $id = new THidden('id');
         $nome = new TEntry('nome');
         $email = new TEntry('email');
 
 
         // add the fields
-        $this->form->addFields( [ new TLabel('Id') ], [ $id ] );
-        $this->form->addFields( [ new TLabel('Nome') ], [ $nome ] );
-        $this->form->addFields( [ new TLabel('Email') ], [ $email ] );
+        $this->form->addFields( [ new THidden('Id') ], [ $id ] );
+        $this->form->addFields( [ new TLabel('Nome') ], [ $nome ] ,
+                                [ new TLabel('Email') ], [ $email ] );
 
 
 
